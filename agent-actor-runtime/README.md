@@ -28,8 +28,8 @@ Vultr VKE remote buildx verification:
 70-tools/scripts/buildkit/remote-build.sh \
   --image ghcr.io/etzhayyim/holochain-agent-actor-runtime \
   --tag experimental-amd64 \
-  --context 20-actors/kotoba-kotodama/holochain/agent-actor-runtime \
-  --dockerfile 20-actors/kotoba-kotodama/holochain/agent-actor-runtime/Dockerfile \
+  --context agent-actor-runtime \
+  --dockerfile agent-actor-runtime/Dockerfile \
   --push
 ```
 
