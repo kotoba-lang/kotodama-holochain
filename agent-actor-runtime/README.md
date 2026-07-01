@@ -1,6 +1,10 @@
-# Holochain Agent Actor Runtime Experiment
+# Holochain Agent Actor Runtime Payloads
 
-This is a packaging scaffold for ADR-2605092600. It models a etzhayyim actor cell as:
+This directory now keeps only the payload examples and historical notes from the
+ADR-2605092600 Holochain agent actor runtime experiment. The in-repository Rust
+zome scaffold and Docker build path were removed.
+
+The former experiment modeled a etzhayyim actor cell as:
 
 - DNA: `agent_actor_runtime`
 - Role: `agent_actor_runtime`
@@ -22,26 +26,7 @@ Example payloads:
 - `examples/langchain-tool-agent.json`
 - `examples/commit-actor-event.json`
 
-Vultr VKE remote buildx verification:
-
-```sh
-70-tools/scripts/buildkit/remote-build.sh \
-  --image ghcr.io/etzhayyim/holochain-agent-actor-runtime \
-  --tag experimental-amd64 \
-  --context agent-actor-runtime \
-  --dockerfile agent-actor-runtime/Dockerfile \
-  --push
-```
-
-Verified pushed image:
-
-```text
-ghcr.io/etzhayyim/holochain-agent-actor-runtime:experimental-amd64
-digest: sha256:29a1f2f037a31a8ae0518272706368714610b3eba845667e9690834b31a031b0
-platform: linux/amd64
-```
-
-The scaffold is intentionally not the production runtime. The CLI contract
+The scaffold was intentionally not the production runtime. The CLI contract
 smoke previously lived in `70-tools/etzhayyim/etzhayyim/`; that tree was removed
 2026-05-20 along with the etzhayyim CLI. Until the Holochain plan is re-ported
 (target: `e7m agent holochain-plan` or similar), the smoke is unavailable:
